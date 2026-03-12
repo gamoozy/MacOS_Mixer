@@ -20,6 +20,78 @@ A lightweight macOS menu bar application for per-application audio volume contro
 
 ---
 
+## Installation
+
+### Option A — One-command install (recommended)
+
+Paste this in Terminal. It checks your macOS version, installs Homebrew + XcodeGen if missing, clones the repo, builds a Release binary, and drops the app in `/Applications` — all in one shot.
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/gamoozy/MacOS_Mixer/main/install.sh)
+```
+
+> **First launch:** macOS will ask for microphone permission — click **Allow**. The app icon (🎚) will appear in your menu bar.
+
+---
+
+### Option B — Download pre-built binary
+
+1. Go to the [**Releases page**](https://github.com/gamoozy/MacOS_Mixer/releases/latest)
+2. Download `MacOs.Mixer.zip`
+3. Unzip and drag **MacOs Mixer.app** to your `/Applications` folder
+4. Right-click the app → **Open** (first time only, to bypass Gatekeeper)
+5. Click **Open** in the security dialog
+
+---
+
+### Option C — Build from source manually
+
+**Prerequisites:** macOS 14.2+, [Xcode 15+](https://apps.apple.com/app/xcode/id497799835), [Homebrew](https://brew.sh)
+
+```bash
+# 1. Install XcodeGen
+brew install xcodegen
+
+# 2. Clone the repo
+git clone https://github.com/gamoozy/MacOS_Mixer.git
+cd MacOs_Mixer
+
+# 3. Build and install
+make install        # builds Release + copies to /Applications
+
+# 4. Launch
+make run            # or: open /Applications/MacOsMixer.app
+```
+
+**Available `make` commands:**
+
+| Command | Description |
+|---|---|
+| `make` / `make install` | Build Release binary and install to `/Applications` |
+| `make run` | Install and launch immediately |
+| `make build` | Build without installing |
+| `make generate` | Regenerate `MacOsMixer.xcodeproj` from `project.yml` |
+| `make clean` | Delete the `build/` directory |
+| `make uninstall` | Quit the app and remove from `/Applications` |
+
+---
+
+## Uninstall
+
+```bash
+make uninstall
+# or manually:
+rm -rf /Applications/MacOsMixer.app
+```
+
+To also remove saved preferences:
+
+```bash
+defaults delete com.macmixer.audiomixer
+```
+
+---
+
 ## Requirements
 
 | Requirement | Version |
