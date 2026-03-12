@@ -15,6 +15,7 @@
 		6D80946201980633D9E1A682 /* AppAudioTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4531F9C2DD719892143A023F /* AppAudioTap.swift */; };
 		9E6D2E7E2939CCAC3D732241 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9595394DA7B15004CEFA0A4E /* ServiceManagement.framework */; };
 		C1AC7B0D984BEEFA0F1E20B4 /* AudioTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584C4FF31FE19F04F4FDE90 /* AudioTypes.swift */; };
+		C7ECD5DE3C1D85AD898B5911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF5A9044483698D71BECA91B /* Assets.xcassets */; };
 		CDAD336F3E78ECD6F1188C85 /* ProcessMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7D463585AA925149872E7D /* ProcessMonitor.swift */; };
 		D1072C7EDDB832189810C38B /* MixerPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84957503E654AD967DF279 /* MixerPopoverView.swift */; };
 		F136B42801C3A1C33DBB0FAE /* DeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A829C38E4CF9CFA51964A78 /* DeviceManager.swift */; };
@@ -40,6 +41,7 @@
 		9C7D463585AA925149872E7D /* ProcessMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessMonitor.swift; sourceTree = "<group>"; };
 		B123F0EA39AAF7871435E9EF /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
 		BC831CF9940565793F42C358 /* MacOsMixerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOsMixerApp.swift; sourceTree = "<group>"; };
+		CF5A9044483698D71BECA91B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9292CA184BFA1DFE8709C4 /* MacOsMixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacOsMixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90C43A03DFA6F917124DF54 /* AudioPropertyBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPropertyBridge.m; sourceTree = "<group>"; };
 		F055D8A0BCC01E41721C6CDF /* AppAudioRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAudioRowView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		2A6DF331ED4165AE05D35468 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CF5A9044483698D71BECA91B /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildConfigurationList = ADD593CB15ED36C3FA4DDBA7 /* Build configuration list for PBXNativeTarget "MacOsMixer" */;
 			buildPhases = (
 				7F4B0CCEB8FD1E3E364B1430 /* Sources */,
+				5CB6FBEFD81273914954EE0D /* Resources */,
 				38114B26F9D3ACB90C44AAF0 /* Frameworks */,
 			);
 			buildRules = (
@@ -212,6 +216,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CB6FBEFD81273914954EE0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ECD5DE3C1D85AD898B5911 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F4B0CCEB8FD1E3E364B1430 /* Sources */ = {
@@ -304,6 +319,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSET_CATALOG_COMPILER_OPTIMIZATION = space;
 				CODE_SIGN_ENTITLEMENTS = MacOsMixer/MacOsMixer.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -322,6 +339,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = NO;
+				ASSET_CATALOG_COMPILER_OPTIMIZATION = space;
 				CODE_SIGN_ENTITLEMENTS = MacOsMixer/MacOsMixer.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
