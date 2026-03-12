@@ -126,7 +126,7 @@ struct MixerPopoverView: View {
     // MARK: - Footer
 
     private var footer: some View {
-        HStack {
+        HStack(spacing: 12) {
             Button("Quit") {
                 NSApplication.shared.terminate(nil)
             }
@@ -136,9 +136,16 @@ struct MixerPopoverView: View {
 
             Spacer()
 
-            Text("macOS \(ProcessInfo.processInfo.operatingSystemVersionString)")
-                .font(.caption2)
-                .foregroundStyle(.quaternary)
+            Toggle(isOn: Binding(
+                get: { state.launchAtLogin },
+                set: { state.launchAtLogin = $0 }
+            )) {
+                Text("Launch at Login")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            .toggleStyle(.checkbox)
+            .controlSize(.small)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)

@@ -15,6 +15,11 @@ final class MixerState {
     var micPermissionGranted: Bool = false
     var lastTapError: String?
 
+    var launchAtLogin: Bool {
+        get { LaunchAtLoginManager.isEnabled }
+        set { LaunchAtLoginManager.setEnabled(newValue) }
+    }
+
     let processMonitor = ProcessMonitor()
     let deviceManager = DeviceManager()
     let engine = AudioMixerEngine()
@@ -29,7 +34,15 @@ final class MixerState {
             self?.sync()
             self?.restoreSavedPreferences()
             self?.startPeriodicSync()
+            self?.registerLaunchAtLoginIfNeeded()
         }
+    }
+
+    private func registerLaunchAtLoginIfNeeded() {
+        let key = "hasRegisteredLaunchAtLogin"
+        guard !UserDefaults.standard.bool(forKey: key) else { return }
+        UserDefaults.standard.set(true, forKey: key)
+        LaunchAtLoginManager.setEnabled(true)
     }
 
     deinit {

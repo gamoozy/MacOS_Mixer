@@ -33,6 +33,8 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
         ENABLE_HARDENED_RUNTIME: true
+    dependencies:
+      - sdk: ServiceManagement.framework
     entitlements:
       path: MacOsMixer/MacOsMixer.entitlements
       properties:
